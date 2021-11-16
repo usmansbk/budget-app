@@ -26,10 +26,20 @@ RSpec.describe Category, type: :model do
   end
 
   describe 'association' do
-    subject { FactoryBot.build :category }
+    context 'belong-to user' do
+      subject { FactoryBot.build :category }
 
-    it 'should have a user' do
-      expect(subject.user).to be_present
+      it 'should have a user' do
+        expect(subject.user).to be_present
+      end
+    end
+
+    context 'has-many deals' do
+      subject { FactoryBot.build :category_with_deals, deals_count: 5 }
+
+      it 'should have deals' do
+        expect(subject.deals.length).to be 5
+      end
     end
   end
 end
