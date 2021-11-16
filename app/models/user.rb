@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true, length: { maximum: 100 }
   validates :email, uniqueness: true
+
   has_many :deals
+  has_many :categories
 end
