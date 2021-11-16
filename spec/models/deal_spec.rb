@@ -14,6 +14,11 @@ RSpec.describe Deal, type: :model do
       expect(subject).to_not be_valid
     end
 
+    it 'should have name not longer than 100 chars' do
+      subject.name = 'a' * 101
+      expect(subject).to_not be_valid
+    end
+
     it 'should have an amount' do
       subject.amount = nil
       expect(subject).to_not be_valid

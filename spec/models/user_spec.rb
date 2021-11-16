@@ -14,6 +14,11 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
 
+    it 'should have name not longer than 100 chars' do
+      subject.name = 'a' * 101
+      expect(subject).to_not be_valid
+    end
+
     it 'should have an email' do
       subject.email = nil
       expect(subject).to_not be_valid
