@@ -30,7 +30,7 @@ RSpec.describe Deal, type: :model do
     end
   end
 
-  describe 'author' do
+  describe 'association' do
     subject { FactoryBot.build :deal }
 
     it 'should have an author' do
