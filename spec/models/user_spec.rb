@@ -24,4 +24,22 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
   end
+
+  describe 'association' do
+    context 'has-many categories' do
+      subject { FactoryBot.build(:user_with_categories, categories_count: 3) }
+
+      it 'should have categories' do
+        expect(subject.categories.length).to be 3
+      end
+    end
+
+    context 'has-many deals' do
+      subject { FactoryBot.build(:user_with_deals, deals_count: 3) }
+
+      it 'should have deals' do
+        expect(subject.deals.length).to be 3
+      end
+    end
+  end
 end
