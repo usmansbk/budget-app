@@ -3,6 +3,5 @@ FactoryBot.define do
     name { Faker::Company.name }
     icon { Faker::Company.logo }
     user
-    deal
   end
 end
