@@ -36,6 +36,23 @@
   font-weight: lighter;
 }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-family: "ProximaThin", serif;
 }
