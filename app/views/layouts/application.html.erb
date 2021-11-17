@@ -15,8 +15,12 @@
   <body>
     <div class="root">
       <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice.present? %>
+        <p class="notice p-4"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert p-4"><%= alert %></p>
+      <% end %>
     </div>
   </body>
 </html>
