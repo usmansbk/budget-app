@@ -1,11 +1,15 @@
+@import "colors";
+
 .button,
 .input {
   font-size: 0.875rem;
 }
 
 .button {
+  border: none;
+  background: none;
+  cursor: pointer;
   padding: 1rem;
-  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,13 +36,10 @@
 }
 
 .input {
-  height: 2.5rem;
   border: none;
   width: 100%;
   padding: 1rem;
 }
-
-$shadow-color: #f1f1f2;
 
 .shadow-box {
   box-shadow: 0px 1px 2px $shadow-color, 0px -2px 3px $shadow-color;
@@ -47,4 +48,18 @@ $shadow-color: #f1f1f2;
 .divider {
   height: 2px;
   background-color: $shadow-color;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background: $main-color;
+  color: $on-main;
+  height: 3rem;
+
+  .title {
+    font-family: "ProximaLight", serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+  }
 }

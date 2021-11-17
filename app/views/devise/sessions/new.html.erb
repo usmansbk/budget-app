@@ -1,12 +1,17 @@
 <div class="has-background-color is-flex flex-grow-1 flex-direction-column">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div>
+    <div class="header">
       <%= render "devise/shared/back_button" %>
-      <h2>Log in</h2>
+      <div class="is-flex flex-grow-1 justify-content-center">
+        <h2 class="title">Log in</h2>
+      </div>
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: "button is-link has-text-white" %>
       </div>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
 
     <div class="input-group my-2 shadow-box">
       <div class="field">
