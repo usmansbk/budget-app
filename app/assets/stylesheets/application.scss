@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "colors";
+
 @font-face {
   font-family: "ProximaRegular";
   src: url(/assets/ProximaRegular.otf) format("truetype");
@@ -32,7 +34,7 @@
 
 @font-face {
   font-family: "ProximaLight";
-  src: url(/assets/ProxmaLight.otf) format("truetype");
+  src: url(/assets/ProximaLight.otf) format("truetype");
   font-weight: lighter;
 }
 
@@ -51,8 +53,22 @@ ol {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-h1 {
-  font-family: "ProximaThin", serif;
+html {
+  font-family: "ProximaLight", serif;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "ProximaBold", serif;
+}
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
