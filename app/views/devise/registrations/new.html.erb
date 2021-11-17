@@ -9,8 +9,7 @@
         <%= f.submit "Next", class: "button is-link has-text-white" %>
       </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="input-group my-2 shadow-box">
       <div class="field">
