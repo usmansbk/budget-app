@@ -1,3 +1,15 @@
 $main-color: #3778c2;
 $secondary-color: #5fb523;
 $text-color: #434b54;
+$on-main: #fff;
+$on-secondary: #fff;
+
+.is-primary {
+  background-color: $main-color;
+  color: $on-main;
+}
+
+.is-secondary {
+  background-color: $secondary-color;
+  color: $on-secondary;
+}
