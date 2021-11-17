@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories
+  get 'welcome', to: 'splash#index'
 end
