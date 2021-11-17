@@ -13,18 +13,18 @@
   </head>
 
   <body>
-    <div class="root">
+    <div class="is-flex flex-grow-1 flex-direction-column">
       <%= yield %>
-      <% if notice.present? %>
-        <div class="is-secondary">
-          <p class="notice p-4 fw-regular"><%= notice %></p>
-        </div>
-      <% end %>
-      <% if alert.present? %>
-        <div class="has-background-color-dark">
-          <p class="alert p-4 fw-regular"><%= alert %></p>
-        </div>
-      <% end %>
     </div>
+    <% if notice.present? %>
+      <div class="is-secondary">
+        <p class="notice p-4 fw-regular"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="has-background-color-dark">
+        <p class="alert p-4 fw-regular"><%= alert %></p>
+      </div>
+    <% end %>
   </body>
 </html>
