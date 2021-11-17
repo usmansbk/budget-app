@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: "ProximaRegular";
+  src: url(/assets/ProximaRegular.otf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ProximaBold";
+  src: url(/assets/ProximaBold.otf) format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ProximaThin";
+  src: url(/assets/ProximaThin.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaLight";
+  src: url(/assets/ProxmaLight.otf) format("truetype");
+  font-weight: lighter;
+}
+
+h1 {
+  font-family: "ProximaThin", serif;
+}
