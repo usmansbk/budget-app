@@ -1,8 +1,10 @@
 $main-color: #3778c2;
 $secondary-color: #5fb523;
 $text-color: #434b54;
+$bg-color: #f5f6f8;
 $on-main: #fff;
 $on-secondary: #fff;
+$shadow-color: #f1f1f2;
 
 .is-primary {
   background-color: $main-color;
@@ -12,4 +14,16 @@ $on-secondary: #fff;
 .is-secondary {
   background-color: $secondary-color;
   color: $on-secondary;
+}
+
+.has-background-color {
+  background-color: $bg-color;
+}
+
+.has-background-color-white {
+  background-color: #fff;
+}
+
+.has-text-white {
+  color: white;
 }
