@@ -1,5 +1,8 @@
 <div class="is-flex flex-direction-column flex-grow-1 has-background-color">
   <header class="header">
+    <button class="button has-text-white">
+      <span class="material-icons-outlined">menu</span>
+    </button>
     <div class="is-flex flex-grow-1 justify-content-center">
       <h1 class="title">Categories</h1>
     </div>
@@ -7,11 +10,7 @@
       <span class="material-icons-outlined">logout</span>
     <% end %>
   </header>
-  <% @categories.each do |category| %>
-    <div>
-      <h1><%= category.name %></h1>
-    </div>
-  <% end %>
+  <%= render @categories %>
 </div>
 <footer class="p-4 is-secondary">
   <%= link_to 'Add a new category', new_category_path, class: "button is-outlined" %>

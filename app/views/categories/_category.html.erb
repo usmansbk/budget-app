@@ -1,0 +1,10 @@
+<div class="is-flex has-background-color-white mx-2 mt-1 p-2">
+	<%= image_tag(category.icon, class: "image") %>
+	<div class="is-flex flex-grow-1 flex-direction-column pl-2">
+		<div class="is-flex justify-space-between">
+			<h5><%= category.name %></h5>
+			<h5>$17.00</h5>
+		</div>
+		<p><%= category.created_at.strftime("%d %b %Y") %></p>
+	</div>
+</div>
