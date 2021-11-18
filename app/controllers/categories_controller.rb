@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = current_user.categories 
+    @categories = current_user.categories
   end
 
   def show
