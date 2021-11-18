@@ -21,6 +21,10 @@
     text-transform: none;
   }
 
+  &.is-outlined {
+    border: 2px solid white;
+  }
+
   &:hover {
     opacity: 0.95;
   }
@@ -58,8 +62,16 @@
   height: 3rem;
 
   .title {
-    font-family: "ProximaLight", serif;
+    font-family: "ProximaRegular", serif;
     font-size: 0.875rem;
     text-transform: uppercase;
   }
+}
+
+.image {
+  width: 4rem;
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }

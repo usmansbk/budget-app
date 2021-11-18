@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = FactoryBot.create(:user, email: "test@gmail.com")
+
+5.times do |i|
+	category = FactoryBot.create(:category, user: user)
+
+	5.times do |j|
+		deal = FactoryBot.create(:deal, author: user)
+		deal.categories.push(category)
+	end
+end

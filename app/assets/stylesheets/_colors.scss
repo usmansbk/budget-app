@@ -21,7 +21,12 @@ $shadow-color: #f1f1f2;
 }
 
 .has-background-color-white {
-  background-color: #fff;
+  background-color: white;
+}
+
+.has-background-color-dark {
+  background-color: $text-color;
+  color: white;
 }
 
 .has-text-white {

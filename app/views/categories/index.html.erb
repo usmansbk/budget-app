@@ -1,26 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="is-flex flex-direction-column flex-grow-1 has-background-color">
+  <header class="header">
+    <button class="button has-text-white">
+      <span class="material-icons-outlined">menu</span>
+    </button>
+    <div class="is-flex flex-grow-1 justify-content-center">
+      <h1 class="title">Categories</h1>
+    </div>
+    <%= button_to destroy_user_session_url, method: :delete, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">logout</span>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
-
-<%= button_to 'Logout', destroy_user_session_url, method: :delete %>
+  </header>
+  <%= render @categories %>
+</div>
+<footer class="p-4 is-secondary">
+  <%= link_to 'Add a new category', new_category_path, class: "button is-outlined" %>
+</footer>
