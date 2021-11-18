@@ -2,20 +2,18 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :set_category, only: %i[show]
 
-  # GET /categories
   def index
     @categories = Category.all
   end
 
-  # GET /categories/1
-  def show; end
+  def show
+    @deals = @category.deals
+  end
 
-  # GET /categories/new
   def new
     @category = Category.new
   end
 
-  # POST /categories
   def create
     @category = Category.new(category_params)
 
@@ -31,7 +29,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.includes(:deals).find(params[:id])
   end
 
   def category_params

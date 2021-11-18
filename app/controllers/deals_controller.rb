@@ -1,16 +1,10 @@
 class DealsController < ApplicationController
   load_and_authorize_resource
-  # GET /deals
-  def index
-    @deals = Deal.all
-  end
 
-  # GET /deals/new
   def new
     @deal = Deal.new
   end
 
-  # POST /deals
   def create
     @deal = Deal.new(deal_params)
 
