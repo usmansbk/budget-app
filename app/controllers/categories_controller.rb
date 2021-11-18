@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = Category.all
+    @categories = current_user.categories 
   end
 
   def show
@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -33,6 +33,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.fetch(:category, {})
+    params.fetch(:category, {}).permit(:name, :icon)
   end
 end
