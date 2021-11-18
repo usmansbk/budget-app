@@ -1,0 +1,6 @@
+<h1>Deals</h1>
+<% @deals.each do |deal| %>
+  <p><%= deal.name %></p>
+<% end %>
+
+<%= link_to 'New Deal', new_deal_path %>
