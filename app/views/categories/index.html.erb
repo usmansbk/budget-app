@@ -1,6 +1,12 @@
-<div class="is-flex flex-grow-1">
-  <h1>Categories</h1>
-  <%= button_to 'Logout', destroy_user_session_url, method: :delete %>
+<div class="is-flex flex-direction-column flex-grow-1 has-background-color">
+  <header class="header">
+    <div class="is-flex flex-grow-1 justify-content-center">
+      <h1 class="title">Categories</h1>
+    </div>
+    <%= button_to destroy_user_session_url, method: :delete, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">logout</span>
+    <% end %>
+  </header>
   <% @categories.each do |category| %>
     <div>
       <h1><%= category.name %></h1>
