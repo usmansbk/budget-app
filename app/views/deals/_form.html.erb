@@ -1,12 +1,12 @@
 <div class="has-background-color is-flex flex-grow-1 flex-direction-column">
   <%= form_with(model: deal) do |form| %>
     <div class="header">
-      <%= render "devise/shared/back_button" %>
+      <%= render "shared/back_button" %>
       <div class="is-flex flex-grow-1 justify-content-center">
         <h2 class="title">New Transaction</h2>
       </div>
       <div class="actions">
-        <%= form.submit "Create", class: "button is-link has-text-white" %>
+        <%= form.submit "Save", class: "button is-link has-text-white" %>
       </div>
     </div>
     <%= render "devise/shared/error_messages", resource: deal %>
