@@ -5,31 +5,21 @@
       <div class="is-flex flex-grow-1 justify-content-center">
         <h2 class="title">Register</h2>
       </div>
-      <div class="actions">
-        <%= f.submit "Next", class: "button is-link has-text-white" %>
-      </div>
+      <%= f.submit "Next", class: "button is-link has-text-white" %>
     </div>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="input-group my-2 shadow-box">
-      <div class="field">
-        <%= f.text_field :name, autofocus: true, placeholder: "Full Name", class: "input" %>
-      </div>
+      <%= f.text_field :name, autofocus: true, placeholder: "Full Name", class: "input" %>
       <div class="divider"></div>
 
-      <div class="field">
-        <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "input" %>
-      </div>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "input" %>
       <div class="divider"></div>
 
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "input" %>
-      </div>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "input" %>
       <div class="divider"></div>
 
-      <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "input" %>
-      </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "input" %>
     </div>
   <% end %>
 </div>
