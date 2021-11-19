@@ -12,11 +12,10 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
     @deal.author = current_user
-    puts deal_params
 
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to @deal, notice: 'Transaction was successfully added.' }
+        format.html { redirect_to @deal.categories.first, notice: 'Transaction was successfully added.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
