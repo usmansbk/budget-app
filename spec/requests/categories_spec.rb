@@ -5,7 +5,7 @@ RSpec.describe '/categories', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      FactoryBot.create(:category)
+      FactoryBot.create(:category, user: @user)
       get categories_url
       expect(response).to be_successful
     end
@@ -13,7 +13,7 @@ RSpec.describe '/categories', type: :request do
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      category = FactoryBot.create(:category)
+      category = FactoryBot.create(:category, user: @user)
       get category_url(category)
       expect(response).to be_successful
     end
@@ -30,12 +30,12 @@ RSpec.describe '/categories', type: :request do
     context 'with valid parameters' do
       it 'creates a new Category' do
         expect do
-          post categories_url, params: { category: FactoryBot.create(:category) }
+          post categories_url, params: { category: FactoryBot.create(:category, user: @user) }
         end.to change(Category, :count).by(1)
       end
 
       it 'redirects to the created category' do
-        post categories_url, params: { category: FactoryBot.create(:category) }
+        post categories_url, params: { category: FactoryBot.create(:category, user: @user) }
         expect(response).to redirect_to(category_url(Category.last))
       end
     end
@@ -43,12 +43,12 @@ RSpec.describe '/categories', type: :request do
     context 'with invalid parameters' do
       it 'does not create a new Category' do
         expect do
-          post categories_url, params: { category: FactoryBot.create(:category) }
+          post categories_url, params: { category: FactoryBot.create(:category, user: @user) }
         end.to change(Category, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post categories_url, params: { category: FactoryBot.create(:category) }
+        post categories_url, params: { category: FactoryBot.create(:category, user: @user) }
         expect(response).to be_successful
       end
     end
@@ -56,14 +56,14 @@ RSpec.describe '/categories', type: :request do
 
   describe 'DELETE /destroy' do
     it 'destroys the requested category' do
-      category = FactoryBot.create(:category)
+      category = FactoryBot.create(:category, user: @user)
       expect do
         delete category_url(category)
       end.to change(Category, :count).by(-1)
     end
 
     it 'redirects to the categories list' do
-      category = FactoryBot.create(:category)
+      category = FactoryBot.create(:category, user: @user)
       delete category_url(category)
       expect(response).to redirect_to(categories_url)
     end
