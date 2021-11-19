@@ -1,17 +1,24 @@
-<%= form_with(model: deal) do |form| %>
-  <% if deal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
-
-      <ul>
-        <% deal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="has-background-color is-flex flex-grow-1 flex-direction-column">
+  <%= form_with(model: deal) do |form| %>
+    <div class="header">
+      <%= render "devise/shared/back_button" %>
+      <div class="is-flex flex-grow-1 justify-content-center">
+        <h2 class="title">New Transaction</h2>
+      </div>
+      <div class="actions">
+        <%= form.submit "Create", class: "button is-link has-text-white" %>
+      </div>
+    </div>
+    <%= render "devise/shared/error_messages", resource: deal %>
+    <div class="input-group my-2 shadow-box">
+      <div class="field">
+        <%= form.text_field :name, autofocus: true, placeholder: "Name", class: "input", required: true %>
+      </div>
+      <div class="divider"></div>
+      <div class="field">
+        <%= form.number_field :icon, placeholder: "Amount", class: "input", required: true %>
+      </div>
+      <div class="divider"></div>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
