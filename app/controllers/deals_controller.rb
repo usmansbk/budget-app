@@ -26,6 +26,6 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.fetch(:deal, {}).permit(:name, :amount, :category_ids)
+    params.fetch(:deal, {}).permit(:name, :amount, category_ids: [])
   end
 end
