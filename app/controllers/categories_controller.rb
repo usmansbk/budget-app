@@ -26,6 +26,13 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Category was successfully deleted.' }
+    end
+  end
+
   private
 
   def set_category
