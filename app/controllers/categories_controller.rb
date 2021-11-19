@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @deals = @category.deals
+    @deals = @category.deals.order(created_at: 'desc')
   end
 
   def new
