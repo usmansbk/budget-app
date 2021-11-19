@@ -6,7 +6,7 @@
         <h2 class="title">New Transaction</h2>
       </div>
       <div class="actions">
-        <%= form.submit "Save", class: "button is-link has-text-white" %>
+        <%= form.submit "Save", class: "button has-text-white" %>
       </div>
     </div>
     <%= render "devise/shared/error_messages", resource: deal %>
@@ -19,6 +19,9 @@
         <%= form.number_field :amount, placeholder: "Amount", class: "input", required: true %>
       </div>
       <div class="divider"></div>
+      <div class="field">
+        <%= form.select :categories, @categories, {}, { class: "input", multiple: true } %>
+      </div>
     </div>
   <% end %>
 </div>

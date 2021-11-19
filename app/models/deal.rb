@@ -1,5 +1,5 @@
 class Deal < ApplicationRecord
-  validates :name, :amount, presence: true, length: { maximum: 100 }
+  validates :name, :amount, :categories, presence: true, length: { maximum: 100 }
   validates :amount, numericality: { greater_than: 0 }
 
   belongs_to :author, class_name: 'User'
