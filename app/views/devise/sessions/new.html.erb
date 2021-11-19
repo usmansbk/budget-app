@@ -5,20 +5,14 @@
       <div class="is-flex flex-grow-1 justify-content-center">
         <h2 class="title">Log in</h2>
       </div>
-      <div class="actions">
-        <%= f.submit "Log in", class: "button is-link has-text-white" %>
-      </div>
+      <%= f.submit "Log in", class: "button is-link has-text-white" %>
     </div>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="input-group my-2 shadow-box">
-      <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "input" %>
-      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "input" %>
       <div class="divider"></div>
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "input" %>
-      </div>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "input" %>
     </div>
 
     <%= link_to "Forgot password?", new_password_path(resource_name), class: "button is-link" %>

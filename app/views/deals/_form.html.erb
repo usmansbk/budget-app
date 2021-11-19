@@ -5,23 +5,15 @@
       <div class="is-flex flex-grow-1 justify-content-center">
         <h2 class="title">New Transaction</h2>
       </div>
-      <div class="actions">
-        <%= form.submit "Save", class: "button has-text-white" %>
-      </div>
+      <%= form.submit "Save", class: "button has-text-white" %>
     </div>
     <%= render "devise/shared/error_messages", resource: deal %>
     <div class="input-group my-2 shadow-box">
-      <div class="field">
-        <%= form.text_field :name, autofocus: true, placeholder: "Name", class: "input", required: true %>
-      </div>
+      <%= form.text_field :name, autofocus: true, placeholder: "Name", class: "input", required: true %>
       <div class="divider"></div>
-      <div class="field">
-        <%= form.number_field :amount, placeholder: "Amount", class: "input", required: true %>
-      </div>
+      <%= form.number_field :amount, placeholder: "Amount", class: "input", required: true %>
       <div class="divider"></div>
-      <div class="field">
-        <%= form.select :categories, @categories, {}, { class: "input", multiple: true } %>
-      </div>
+      <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, { class: "input", multiple: true } %>
     </div>
   <% end %>
 </div>

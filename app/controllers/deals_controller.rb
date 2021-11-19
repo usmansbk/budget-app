@@ -12,6 +12,7 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
     @deal.author = current_user
+    puts deal_params
 
     respond_to do |format|
       if @deal.save
@@ -25,6 +26,6 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.fetch(:deal, {}).permit(:name, :amount, :categories)
+    params.fetch(:deal, {}).permit(:name, :amount, :category_ids)
   end
 end
