@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Homes', type: :feature do
+RSpec.feature 'Home', type: :feature do
   background do
     @user = FactoryBot.create(:user_with_categories)
     sign_in @user
