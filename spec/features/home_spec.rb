@@ -22,7 +22,7 @@ RSpec.feature 'Homes', type: :feature do
   scenario 'Clicking a category item navigates to the transaction page' do
     visit root_path
     category = @user.categories.first
-    click_link category.id
+    find("a[href='#{category_url(category)}']").click
     expect(page).to have_current_path(category_path(category))
   end
 
