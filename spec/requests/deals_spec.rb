@@ -13,8 +13,9 @@ RSpec.describe '/deals', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new Deal' do
+        category = FactoryBot.create(:category)
         expect do
-          post deals_url, params: { deal: FactoryBot.attributes_for(:deal) }
+          post deals_url, params: { deal: FactoryBot.attributes_for(:deal, category_ids: [category.id]) }
         end.to change(Deal, :count).by(1)
       end
     end
