@@ -13,7 +13,7 @@ RSpec.describe '/deals', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'redirects to the created deal' do
-        post deals_url, params: { deal: FactoryBot.create(:deal) }
+        post deals_url, params: { deal: FactoryBot.attributes_for(:deal) }
         expect(response).to redirect_to(deal_url(Deal.last))
       end
     end
