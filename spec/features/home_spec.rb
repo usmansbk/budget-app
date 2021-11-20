@@ -6,7 +6,7 @@ RSpec.feature 'Homes', type: :feature do
     sign_in @user
   end
 
-  scenario 'When the user logins, they are presented with the categories page' do
+  scenario 'When the user logs in, they are presented with the categories page' do
     visit root_path
     expect(page).to have_content 'Categories'
   end
