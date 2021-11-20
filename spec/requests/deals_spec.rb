@@ -12,9 +12,23 @@ RSpec.describe '/deals', type: :request do
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'redirects to the created deal' do
-        post deals_url, params: { deal: FactoryBot.attributes_for(:deal) }
-        expect(response).to redirect_to(deal_url(Deal.last))
+      it 'creates a new Deal' do
+        expect do
+          post deals_url, params: { deal: FactoryBot.attributes_for(:deal) }
+        end.to change(Deal, :count).by(1)
+      end
+    end
+
+    context 'with invalid parameters' do
+      it 'does not create a new deal' do
+        expect do
+          post deals_url, params: { deal: FactoryBot.attributes_for(:deal, name: nil) }
+        end.to change(Deal, :count).by(0)
+      end
+
+      it "renders new page (i.e. to display the 'new' template)" do
+        post deals_url, params: { deal: FactoryBot.attributes_for(:deal, name: nil) }
+        expect(response).not_to be_successful
       end
     end
   end

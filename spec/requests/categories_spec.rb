@@ -30,26 +30,26 @@ RSpec.describe '/categories', type: :request do
     context 'with valid parameters' do
       it 'creates a new Category' do
         expect do
-          post categories_url, params: { category: FactoryBot.attributes_for(:category, user: @user) }
+          post categories_url, params: { category: FactoryBot.attributes_for(:category) }
         end.to change(Category, :count).by(1)
       end
 
       it 'redirects to the created category' do
-        post categories_url, params: { category: FactoryBot.attributes_for(:category, user: @user) }
-        expect(response).to redirect_to(category_url(Category.last))
+        post categories_url, params: { category: FactoryBot.attributes_for(:category) }
+        expect(response).to redirect_to(root_url)
       end
     end
 
     context 'with invalid parameters' do
       it 'does not create a new Category' do
         expect do
-          post categories_url, params: { category: FactoryBot.attributes_for(:category, user: @user) }
+          post categories_url, params: { category: FactoryBot.attributes_for(:category, name: nil) }
         end.to change(Category, :count).by(0)
       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post categories_url, params: { category: FactoryBot.attributes_for(:category, user: @user) }
-        expect(response).to be_successful
+      it "renders a new page (i.e. to display the 'new' template)" do
+        post categories_url, params: { category: FactoryBot.attributes_for(:category, name: nil) }
+        expect(response).not_to be_successful
       end
     end
   end
@@ -65,7 +65,7 @@ RSpec.describe '/categories', type: :request do
     it 'redirects to the categories list' do
       category = FactoryBot.create(:category, user: @user)
       delete category_url(category)
-      expect(response).to redirect_to(categories_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
