@@ -1,4 +1,4 @@
-<%= link_to category_url(category) do %>
+<%= link_to category_url(category), id: category.id do %>
 <div class="is-flex has-background-color-white mx-2 mt-1 p-2 card-shadow">
 	<%= image_tag(category.icon, class: "image") %>
 	<div class="is-flex flex-grow-1 flex-direction-column pl-2">

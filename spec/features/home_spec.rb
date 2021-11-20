@@ -15,8 +15,15 @@ RSpec.feature 'Homes', type: :feature do
     visit root_path
     @user.categories.each do |category|
       expect(page).to have_content category.name
-      # expect(page).to have_content category.icon
+      expect(first('img') { |img| img[:src] == category.icon }).to be_present
     end
+  end
+
+  scenario 'Clicking a category item navigates to the transaction page' do
+    visit root_path
+    category = @user.categories.first
+    click_link category.id
+    expect(page).to have_current_path(category_path(category))
   end
 
   scenario 'There is a button "add a new category"' do
