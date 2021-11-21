@@ -6,9 +6,9 @@
     <div class="is-flex flex-grow-1 justify-content-center">
       <h1 class="title">Transactions</h1>
     </div>
-    <button class="button has-text-white">
-      <span class="material-icons-outlined">search</span>
-    </button>
+    <%= link_to @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">delete</span>
+    <% end %>
   </header>
 	<div class="p-4 is-flex justify-content-between">
 		<p>Total Amount:</p>

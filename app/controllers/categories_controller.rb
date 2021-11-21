@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @deals = @category.deals
+    @deals = @category.deals.order(created_at: 'desc')
   end
 
   def new
@@ -23,6 +23,13 @@ class CategoriesController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @category.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Category was successfully deleted.' }
     end
   end
 
