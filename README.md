@@ -12,7 +12,6 @@ A mobile web application where you can manage your budget: you have a list of tr
 
 - Ruby on Rails
 - PostgreSQL
-- Bulma CSS
 
 ## Live Link
 
