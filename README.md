@@ -12,11 +12,10 @@ A mobile web application where you can manage your budget: you have a list of tr
 
 - Ruby on Rails
 - PostgreSQL
-- Bulma CSS
 
 ## Live Link
 
-[Heroku](https://stormy-cliffs-64424.herokuapp.com/)
+[Heroku](https://calm-stream-96524.herokuapp.com/)
 
 ## Getting Started
 
