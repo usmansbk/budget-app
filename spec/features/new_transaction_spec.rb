@@ -7,11 +7,13 @@ RSpec.feature 'NewTransactions', type: :feature do
     @category = FactoryBot.create(:category, user: @user)
   end
 
+  given(:deal) { FactoryBot.build(:deal) }
+
   scenario 'Creating a transaction with valid attributes' do
     visit new_deal_path
     within 'form' do
-      fill_in 'Name', with: 'Mac donalds foods'
-      fill_in 'Amount', with: 9.99
+      fill_in 'Name', with: deal.name
+      fill_in 'Amount', with: deal.amount
       select @category.name
     end
     click_button 'Save'
@@ -21,8 +23,8 @@ RSpec.feature 'NewTransactions', type: :feature do
   scenario 'Creating a transaction with invalid attributes' do
     visit new_deal_path
     within 'form' do
-      fill_in 'Name', with: 'Mac donalds foods'
-      fill_in 'Amount', with: 9.99
+      fill_in 'Name', with: deal.name
+      fill_in 'Amount', with: deal.amount
     end
     click_button 'Save'
     expect(page).to have_content "Categories can't be blank"
