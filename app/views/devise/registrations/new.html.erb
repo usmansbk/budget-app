@@ -1,0 +1,25 @@
+<div class="has-background-color is-flex flex-grow-1 flex-direction-column">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="header">
+      <%= render "devise/shared/back_button" %>
+      <div class="is-flex flex-grow-1 justify-content-center">
+        <h2 class="title">Register</h2>
+      </div>
+      <%= f.submit "Next", class: "button is-link has-text-white" %>
+    </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="input-group my-2 shadow-box">
+      <%= f.text_field :name, autofocus: true, placeholder: "Full Name", class: "input" %>
+      <div class="divider"></div>
+
+      <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "input" %>
+      <div class="divider"></div>
+
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "input" %>
+      <div class="divider"></div>
+
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "input" %>
+    </div>
+  <% end %>
+</div>

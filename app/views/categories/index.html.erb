@@ -1,0 +1,17 @@
+<div class="is-flex flex-direction-column flex-grow-1 has-background-color">
+  <header class="header">
+    <%= link_to root_path, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">home</span>
+    <% end %>
+    <div class="is-flex flex-grow-1 justify-content-center">
+      <h1 class="title">Categories</h1>
+    </div>
+    <%= button_to destroy_user_session_url, method: :delete, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">logout</span>
+    <% end %>
+  </header>
+  <%= render @categories %>
+</div>
+<footer class="p-4 is-secondary">
+  <%= link_to 'Add a new category', new_category_path, class: "button is-outlined" %>
+</footer>

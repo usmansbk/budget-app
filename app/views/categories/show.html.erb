@@ -1,0 +1,22 @@
+<div class="is-flex flex-direction-column flex-grow-1">
+  <header class="header">
+		<%= link_to categories_path, class: "button" do %>
+      <span class="material-icons-outlined">arrow_back</span>
+    <% end %>
+    <div class="is-flex flex-grow-1 justify-content-center">
+      <h1 class="title">Transactions</h1>
+    </div>
+    <%= link_to @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">delete</span>
+    <% end %>
+  </header>
+	<div class="p-4 is-flex justify-content-between">
+		<p>Total Amount:</p>
+		<p class="fw-bold">$<%= @category.total_amount.round(2) %></p>
+	</div>
+	<div class="divider mb-2"></div>
+	<%= render 'deals/index', locals: { deals: @deals } %>
+</div>
+<footer class="p-4 is-secondary">
+  <%= link_to 'Add a new transaction', new_deal_path, class: "button is-outlined" %>
+</footer>

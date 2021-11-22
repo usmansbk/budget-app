@@ -1,0 +1,34 @@
+$main-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+$bg-color: #f5f6f8;
+$on-main: #fff;
+$on-secondary: #fff;
+$shadow-color: #f1f1f2;
+
+.is-primary {
+  background-color: $main-color;
+  color: $on-main;
+}
+
+.is-secondary {
+  background-color: $secondary-color;
+  color: $on-secondary;
+}
+
+.has-background-color {
+  background-color: $bg-color;
+}
+
+.has-background-color-white {
+  background-color: white;
+}
+
+.has-background-color-dark {
+  background-color: $text-color;
+  color: white;
+}
+
+.has-text-white {
+  color: white;
+}

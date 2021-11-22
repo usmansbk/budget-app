@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="is-flex flex-grow-1 justify-content-center align-items-center">
+		<h1 class="fw-thin"><%= t('brand') %></h1>
+	</div>
+	<div class="is-flex flex-direction-column buttons">
+		<%= link_to 'Log in', new_user_session_url, class: "button is-primary" %>
+		<%= link_to 'Sign up', new_user_registration_url, class: "button" %>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<%= link_to category_url(category) do %>
+<div class="is-flex has-background-color-white mx-2 mt-1 p-2 card-shadow">
+	<%= image_tag(category.icon, class: "image") %>
+	<div class="is-flex flex-grow-1 flex-direction-column pl-2">
+		<div class="is-flex justify-space-between my-2">
+			<h5 class="fw-regular is-flex flex-grow-1"><%= category.name %></h5>
+			<small class="fw-bold">$<%= category.total_amount %></small>
+		</div>
+		<small><%= category.created_at.strftime("%d %b %Y") %></small>
+	</div>
+</div>
+<% end %>

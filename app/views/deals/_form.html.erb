@@ -1,0 +1,19 @@
+<div class="has-background-color is-flex flex-grow-1 flex-direction-column">
+  <%= form_with(model: deal) do |form| %>
+    <div class="header">
+      <%= render "shared/back_button" %>
+      <div class="is-flex flex-grow-1 justify-content-center">
+        <h2 class="title">New Transaction</h2>
+      </div>
+      <%= form.submit "Save", class: "button has-text-white" %>
+    </div>
+    <%= render "devise/shared/error_messages", resource: deal %>
+    <div class="input-group my-2 shadow-box">
+      <%= form.text_field :name, autofocus: true, placeholder: "Name", class: "input", required: true %>
+      <div class="divider"></div>
+      <%= form.number_field :amount, placeholder: "Amount", class: "input", required: true %>
+      <div class="divider"></div>
+      <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, { class: "input", multiple: true } %>
+    </div>
+  <% end %>
+</div>

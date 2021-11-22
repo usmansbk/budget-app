@@ -1,0 +1,21 @@
+<div class="has-background-color is-flex flex-grow-1 flex-direction-column">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name)) do |f| %>
+    <div class="header">
+      <%= render "devise/shared/back_button" %>
+      <div class="is-flex flex-grow-1 justify-content-center">
+        <h2 class="title">Forgot password</h2>
+      </div>
+      <div class="actions">
+        <%= f.submit "Next", class: "button is-link has-text-white" %>
+      </div>
+    </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="input-group my-2 shadow-box">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "input" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
